@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test</title>
+  </head>
+  <body>
+
+    <div class="row">
+        <div class="card" data-x="1" style="cursor: pointer;">test1</div>
+        <div class="card" data-x="2" style="cursor: pointer;">test2</div>
+    </div>
+
+    <div class="card" data-x="3" style="cursor: pointer;">test3</div>
+    <div class="card" data-x="4" style="cursor: pointer;">test4</div>
+
+    <script src="jquery/scripts/jquery-3.2.1.slim.min.js" charset="utf-8"></script>
+    <script lang="js" charset="utf-8">
+      var x = $(".row > .card");
+      /*x.each(function(i, el){
+        alert(i+", "+el.innerText);
+      });*/
+
+      x.on("click", function(sender){
+        alert("data-x = " + $(this).attr("data-x"));
+      });
+    </script>
+  </body>
+</html>

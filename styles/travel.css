@@ -38,6 +38,7 @@ body {
   padding: .75rem;
   margin-bottom: 2rem;
   border: 0;
+  cursor: pointer;
 }
 
 .card > img {
