@@ -1,152 +1,96 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link rel="icon" href="images/favicon.ico">
-
-  <title>Your Favorite Travel Destination!</title>
-
-  <!-- Bootstrap core CSS -->
-  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Custom styles for this template -->
-  <link href="styles/travel.css" rel="stylesheet">
+  <meta charset="utf-8" />
+  <title>coffeerun</title>
+  <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootst
+rap/3.3.6/css/bootstrap.min.css" /-->
+  <link rel="stylesheet" href="styles/bootstrap.min.css" />
+  <style>
+    form focus:required:invalid {
+      border-color: #a9442;
+    }
+  </style>
 </head>
 
-<body>
+<body class="container">
+  <header>
+    <h1>CoffeeRun</h1>
+  </header>
+  <section>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <form data-coffee-order="form">
+          <div class="form-group">
+            <label for="coffeeOrder">Coffee Order</label>
+            <input id="coffeeOrder" name="coffee" type="text" class="form-control" autofocus required pattern="[a-zA-Z\s]+" />
+          </div>
 
-  <div class="collapse bg-dark" id="navbarHeader">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-8 py-4">
-          <h4 class="text-white">About</h4>
-          <p class="text-muted">TravelZonker, the premiere site for travel would like to know what has been your favorite travel destination. Vote here for your favorite travel destination and let your voice be heard.</p>
-        </div>
-        <div class="col-sm-4 py-4">
-          <h4 class="text-white">Contact</h4>
-          <ul class="list-unstyled">
-            <li>Main phone: (714) 595-7718</li>
-            <li>Fax: (714) 595-7719</li>
-            <li>Email: sales@travelzonker.com</li>
-          </ul>
-        </div>
+          <div class="form-group">
+            <label for="emailInput">Email</label>
+            <input id="emailInput" name="emailAddress" type="email" value="" placeholder="dr@who.com" class="form-control" required />
+          </div>
+
+          <div class="form-group">
+            <div class="radio">
+              <label>
+                <input name="size" value="short" type="radio" />
+                Short
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input name="size" value="tall" type="radio" checked />
+                Tall
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input name="size" value="Grande" type="radio" />
+                Grande
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="flavorShot">Flavor Shot</label>
+            <select id="flavorShot" name="flavor" class="form-control">
+              <option value="" selected >None</option>
+              <option value="caramel" >Caramel</option>
+              <option value="apple" >Apple</option>
+              <option value="mocha" >Mocha</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="strengthLevel">Caffeine Rating</label>
+            <input id="strengthLevel" name="strength" type="range" value="30" class="form-control" />
+          </div>
+
+          <button type="submit" class="btn btn-default">Submit</button>
+          <button type="reset" class="btn btn-default">Reset</button>
+        </form>
       </div>
     </div>
-  </div>
-  <div class="navbar navbar-dark bg-dark">
-    <div class="container d-flex justify-content-between">
-      <a href="#" class="navbar-brand">Travel Destinations</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-  </div>
-
-  <section class="jumbotron text-center">
-    <div class="container">
-      <h1 class="jumbotron-heading">Vote For Your Favorite Travel Destination</h1>
-      <p class="lead text-muted">Here are some exciting travel destinations. Please vote for your favorite place to vacation.</p>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h4>Pending Orders:</h4>
+        <div data-coffee-order="checklist"></div>
+      </div>
     </div>
   </section>
 
-  <div class="travel text-muted">
-    <div class="container">
-
-      <div class="row">
-        <div class="card" data-id="1">
-          <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-        <div class="card" data-id="2">
-          <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-        <div class="card" data-id="3">
-          <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-
-        <div class="card" data-id="4">
-          <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-        <div class="card" data-id="5">
-          <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-        <div class="card" data-id="6">
-          <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-
-        <div class="card" data-id="7">
-          <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-        <div class="card" data-id="8">
-          <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-        <div class="card" data-id="9">
-          <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <footer class="text-muted">
-    <div class="container">
-      <p class="float-right">
-        <a href="#">Back to top</a>
-      </p>
-      <p>Let your voice be heard</p>
-    </div>
-  </footer>
-
-  <!-- Bootstrap core JavaScript
-    ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="jquery/scripts/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script>
-    window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')
-  </script>
-  <script src="assets/js/vendor/popper.min.js"></script>
-  <script src="assets/js/vendor/holder.min.js"></script>
-  <script src="bootstrap/js/bootstrap.min.js"></script>
-  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-  <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
-  <script src="scripts/vote.js" charset="utf-8"></script>
-  <script>
-    $(function() {
-      Holder.addTheme("thumb", {
-        background: "#55595c",
-        foreground: "#eceeef",
-        text: "Thumbnail"
-      });
-    });
-  </script>
-  <script charset="utf-8">
-    var App = window.App;
-    var Vote = App.Vote;
-
-    var x = $(".row > .card");
-    /*x.each(function(i, el){
-      alert(i+", "+el.innerText);
-    });*/
-
-    x.on("click", function(sender) {
-      var v = new Vote($(this).attr("data-id"));
-      alert("You just voted for me.  I am id=" + v.forId);
-      //send vote to server
-    });
-  </script>
-
+  <!-- Closing script tags are required -->
+  <!--script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" charset="utf-8" ></script-->
+  <script src="scripts/jquery.min.js" charset="utf-8"></script>
+  <script src="scripts/validation.js" charset="utf-8"></script>
+  <script src="scripts/checklist.js" charset="utf-8"></script>
+  <script src="scripts/formhandler.js" charset="utf-8"></script>
+  <script src="scripts/remotedatastore.js" charset="utf-8"></script>
+  <script src="scripts/datastore.js" charset="utf-8"></script>
+  <script src="scripts/truck.js" charset="utf-8"></script>
+  <script src="scripts/main.js" charset="utf-8"></script>
 </body>
 
 </html>
