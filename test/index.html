@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>coffeerun</title>
+  <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootst
+rap/3.3.6/css/bootstrap.min.css" /-->
+  <link rel="stylesheet" href="styles/bootstrap.min.css" />
+  <style>
+    form focus:required:invalid {
+      border-color: #a9442;
+    }
+  </style>
+</head>
+
+<body class="container">
+  <header>
+    <h1>CoffeeRun</h1>
+  </header>
+  <section>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <form data-coffee-order="form">
+          <div class="form-group">
+            <label for="coffeeOrder">Coffee Order</label>
+            <input id="coffeeOrder" name="coffee" type="text" class="form-control" autofocus required pattern="[a-zA-Z\s]+" />
+          </div>
+
+          <div class="form-group">
+            <label for="emailInput">Email</label>
+            <input id="emailInput" name="emailAddress" type="email" value="" placeholder="dr@who.com" class="form-control" required />
+          </div>
+
+          <div class="form-group">
+            <div class="radio">
+              <label>
+                <input name="size" value="short" type="radio" />
+                Short
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input name="size" value="tall" type="radio" checked />
+                Tall
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input name="size" value="Grande" type="radio" />
+                Grande
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="flavorShot">Flavor Shot</label>
+            <select id="flavorShot" name="flavor" class="form-control">
+              <option value="" selected >None</option>
+              <option value="caramel" >Caramel</option>
+              <option value="apple" >Apple</option>
+              <option value="mocha" >Mocha</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="strengthLevel">Caffeine Rating</label>
+            <input id="strengthLevel" name="strength" type="range" value="30" class="form-control" />
+          </div>
+
+          <button type="submit" class="btn btn-default">Submit</button>
+          <button type="reset" class="btn btn-default">Reset</button>
+        </form>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h4>Pending Orders:</h4>
+        <div data-coffee-order="checklist"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing script tags are required -->
+  <!--script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" charset="utf-8" ></script-->
+  <script src="scripts/jquery.min.js" charset="utf-8"></script>
+  <script src="scripts/validation.js" charset="utf-8"></script>
+  <script src="scripts/checklist.js" charset="utf-8"></script>
+  <script src="scripts/formhandler.js" charset="utf-8"></script>
+  <script src="scripts/remotedatastore.js" charset="utf-8"></script>
+  <script src="scripts/datastore.js" charset="utf-8"></script>
+  <script src="scripts/truck.js" charset="utf-8"></script>
+  <script src="scripts/main.js" charset="utf-8"></script>
+</body>
+
+</html>
