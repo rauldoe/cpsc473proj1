@@ -1,7 +1,7 @@
-(function(window) {
+(function(globalObj) {
   'use strict';
 
-  var App = window.App || {};
+  var App = globalObj.App || {};
 
   function DataStore() {
     this.data = {};
@@ -24,6 +24,6 @@
   };
 
   App.DataStore = DataStore;
-  window.App = App;
+  globalObj.App = App;
 
 })(window);

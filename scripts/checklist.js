@@ -1,10 +1,10 @@
-(function(window) {
+(function(globalObj) {
   'use strict';
 
-  function Row(coffeeOrder) {
+  function Row(postingItem) {
     //Constructor code will go there
     var $div = $('<div></div>', {
-      'data-coffee-order': 'checkbox',
+      'data-posting': 'checkbox',
       'class': 'checkbox'
     });
 
@@ -12,18 +12,12 @@
 
     var $checkbox = $('<input></input>', {
       type: 'checkbox',
-      value: coffeeOrder.emailAddress
+      value: postingItem.pid
     });
 
-    var description = coffeeOrder.size + ' ';
+    var description = postingItem.title + ' ';
 
-    if (coffeeOrder.flavor) {
-      description += coffeeOrder.flavor + ' ';
-    }
-
-    description += coffeeOrder.coffee + ' ';
-    description += '(' + coffeeOrder.emailAddress + ')';
-    description += '[' + coffeeOrder.strength + 'x]';
+    description += postingItem.picUrl + ' ';
 
     $label.append($checkbox);
     $label.append(description);
@@ -32,8 +26,8 @@
     this.$element = $div;
   }
 
-  var App = window.App || {};
-  var $ = window.jQuery;
+  var App = globalObj.App || {};
+  var $ = globalObj.jQuery;
 
   function CheckList(selector) {
     if (!selector) {
@@ -47,35 +41,36 @@
     }
   }
 
-  CheckList.prototype.addRow = function(coffeeOrder) {
+  CheckList.prototype.addRow = function(postingItem) {
 
     // Remove any existing rows that match the element address
-    this.removeRow(coffeeOrder.emailAddress);
+    this.removeRow(postingItem.pid);
 
-    //Create a new instance of a row, using the coffeeOrder info
-    var rowElement = new Row(coffeeOrder);
+    //Create a new instance of a row, using the postingItem info
+    var rowElement = new Row(postingItem);
 
     // Add the new row instance's $element property to the checklist
     this.$element.append(rowElement.$element);
   };
 
-  CheckList.prototype.removeRow = function(email) {
+  CheckList.prototype.removeRow = function(pid) {
 
     this.$element
-      .find('[value="' + email + '"]')
-      .closest('[data-coffee-order="checkbox"]')
+      .find('[value="' + pid + '"]')
+      .closest('[data-posting="checkbox"]')
       .remove();
   };
 
   CheckList.prototype.addClickHandler = function(fn) {
+
     this.$element.on('click', 'input', function(event){
-      var email = event.target.value;
-      this.removeRow(email);
-      fn(email);
+      var pid = event.target.value;
+      this.removeRow(pid);
+      fn(pid);
     }.bind(this));
   };
 
   App.CheckList = CheckList;
-  window.App = App;
+  globalObj.App = App;
 
 })(window);

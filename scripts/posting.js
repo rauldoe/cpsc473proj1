@@ -3,15 +3,19 @@
 
   var App = globalObj.App || {};
 
-  function Posting(pid, title, desc, comments){
+  function Posting(pid, title, desc, comments, vote, picUrl, uid) {
+
     this.pid = pid;
     this.title = title;
     this.desc = desc;
     this.comments = comments;
-    this.vote = 0;
+    this.vote = vote;
+    this.picUrl = picUrl;
+    this.uid;
   }
 
-  Posting.prototype.vote = function(){
+  Posting.prototype.voteUp = function() {
+    
     this.vote += 1;
   };
 

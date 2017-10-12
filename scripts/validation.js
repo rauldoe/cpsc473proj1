@@ -1,15 +1,16 @@
-(function(window) {
+(function(globalObj) {
   'use strict';
 
-  var App = window.App || {};
+  var App = globalObj.App || {};
 
   var Validation = {
-    isCompanyEmail: function(email) {
-      return /.+@bignerdranch\.com$/.test(email);
+    isEmail: function(email) {
+      
+      return /.+@.+\.com$/.test(email);
     }
   };
 
   App.Validation = Validation;
-  window.App = App;
+  globalObj.App = App;
 
 })(window);

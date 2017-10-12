@@ -1,10 +1,11 @@
-(function(window) {
+(function(globalObj) {
   'use strict';
 
-  var App = window.App || {};
-  var $ = window.jQuery;
+  var App = globalObj.App || {};
+  var $ = globalObj.jQuery;
 
   function RemoteDataStore(url) {
+    
     if (!url) {
       throw new Error('No remote URL supplied');
     }
@@ -36,12 +37,13 @@
   };
 
   RemoteDataStore.prototype.remove = function(key) {
+
     $.ajax(this.serverUrl + '/' + key, {
       type: 'DELETE'
     });
   };
 
   App.RemoteDataStore = RemoteDataStore;
-  window.App = App;
+  globalObj.App = App;
 
 })(window);
