@@ -13,24 +13,10 @@
   var remoteDSPostings = new RemoteDataStore(SERVER_URL_POSTINGS);
   var remoteDSUsers = new RemoteDataStore(SERVER_URL_USERS);
 
-  var users = [];
-
-  remoteDSUsers.getAll(function(i) {
-    users = i;
-  });
-
   var formHandler = new FormHandler(FORM_SELECTOR);
   formHandler.addSubmitHandler(function(data) {
-    var user = users.find(function(i) {
-      return i.userName === data.userName && i.password === data.password
-    });
-
-    if (user) {
-      console.log('login successful');
-      window.location.replace("http://localhost:3000/landing.html");
-    } else {
-      console.log('login NOT successful');
-    }
+    remoteDSUsers.add(data.id, data);
+    window.location.replace("http://localhost:3000/");
   });
 
   //formHandler.addInputHandler(Validation.isEmail);
