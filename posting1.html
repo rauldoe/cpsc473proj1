@@ -52,12 +52,17 @@ rap/3.3.6/css/bootstrap.min.css" /-->
 
           <div class="form-group">
             <label for="vote">Vote</label>
-            <input id="vote" name="vote" type="text" value="" class="form-control" />
+            <input id="vote" name="vote" type="range" value="30" placeholder="a vote" class="form-control" />
           </div>
 
           <div class="form-group">
             <label for="picUrl">PicUrl</label>
             <input id="picUrl" name="picUrl" type="text" value="" placeholder="a picUrl" class="form-control" />
+          </div>
+
+          <div class="form-group">
+            <label for="uid">Uid</label>
+            <input id="uid" name="uid" type="text" value="" placeholder="a uid" class="form-control" />
           </div>
 
           <button type="submit" class="btn btn-default">Submit</button>
@@ -83,18 +88,7 @@ rap/3.3.6/css/bootstrap.min.css" /-->
   <script src="scripts/datastore.js" charset="utf-8"></script>
   <script src="scripts/posting.js" charset="utf-8"></script>
   <script src="scripts/user.js" charset="utf-8"></script>
-  <script src="scripts/main_posting.js" charset="utf-8"></script>
-
-  <script>
-    $(function() {
-      //initialize
-      var i = new window.App.Main_posting();
-
-      var pid = i.getUrlVars()["pid"];
-      i.init(pid);
-    });
-
-  </script>
+  <script src="scripts/main.js" charset="utf-8"></script>
 </body>
 
 </html>
