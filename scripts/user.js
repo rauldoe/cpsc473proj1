@@ -3,10 +3,10 @@
 
   var App = globalObj.App || {};
 
-  function User(id, username, firstName, lastName, password, email) {
+  function User(id, userName, firstName, lastName, password, email) {
 
     this.id = id;
-    this.username = username;
+    this.userName = username;
     this.firstName = firstName;
     this.lastName = lastName;
     this.password = password;

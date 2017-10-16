@@ -15,7 +15,9 @@
     });
 
     var $img = $('<img></img>', {
-      'data-src': postingItem.picUrl
+      'data-src': postingItem.picUrl,
+      'src': postingItem.picUrl,
+      'class':'imgcard'
     });
 
     var $p = $('<p></p>', {

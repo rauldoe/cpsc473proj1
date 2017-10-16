@@ -15,6 +15,7 @@
 
   var formHandler = new FormHandler(FORM_SELECTOR);
   formHandler.addSubmitHandler(function(data) {
+    console.log(data);
     remoteDSUsers.add(data.id, data);
     window.location.replace("http://localhost:3000/");
   });

@@ -28,6 +28,7 @@
       $('#title').val(i.title);
       $('#desc').val(i.desc);
       $('#picUrl').val(i.picUrl);
+      $("#pic").attr("src", i.picUrl);
       $('#vote').val(i.vote);
 
       $('#commentlist').html('');
