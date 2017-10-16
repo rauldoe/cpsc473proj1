@@ -19,7 +19,4 @@
     window.location.replace("http://localhost:3000/");
   });
 
-  //formHandler.addInputHandler(Validation.isEmail);
-
-  console.log(formHandler);
 })(window);

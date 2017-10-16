@@ -33,7 +33,4 @@
     }
   });
 
-  //formHandler.addInputHandler(Validation.isEmail);
-
-  console.log(formHandler);
 })(window);

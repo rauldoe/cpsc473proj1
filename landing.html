@@ -57,44 +57,6 @@
     <div class="container">
 
       <div class="row">
-        <div class="card" data-id="1">
-          <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-        <div class="card" data-id="2">
-          <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-        <div class="card" data-id="3">
-          <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-
-        <div class="card" data-id="4">
-          <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-        <div class="card" data-id="5">
-          <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-        <div class="card" data-id="6">
-          <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-
-        <div class="card" data-id="7">
-          <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-        <div class="card" data-id="8">
-          <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-        <div class="card" data-id="9">
-          <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
       </div>
 
     </div>
@@ -112,16 +74,24 @@
   <!-- Bootstrap core JavaScript
     ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
-  <script src="jquery/scripts/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script>
-    window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')
-  </script>
+
+  <script src="scripts/jquery.min.js" charset="utf-8"></script>
+
   <script src="assets/js/vendor/popper.min.js"></script>
   <script src="assets/js/vendor/holder.min.js"></script>
   <script src="bootstrap/js/bootstrap.min.js"></script>
   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
   <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
-  <script src="scripts/vote.js" charset="utf-8"></script>
+
+  <script src="scripts/validation.js" charset="utf-8"></script>
+  <script src="scripts/formhandler.js" charset="utf-8"></script>
+  <script src="scripts/remotedatastore.js" charset="utf-8"></script>
+  <script src="scripts/datastore.js" charset="utf-8"></script>
+  <script src="scripts/posting.js" charset="utf-8"></script>
+  <script src="scripts/user.js" charset="utf-8"></script>
+  <script src="scripts/postingcard.js" charset="utf-8"></script>
+  <script src="scripts/main_landing.js" charset="utf-8"></script>
+
   <script>
     $(function() {
       Holder.addTheme("thumb", {
@@ -129,22 +99,6 @@
         foreground: "#eceeef",
         text: "Thumbnail"
       });
-    });
-  </script>
-  <script charset="utf-8">
-    var App = window.App;
-    var Vote = App.Vote;
-
-    var x = $(".row > .card");
-    /*x.each(function(i, el){
-      alert(i+", "+el.innerText);
-    });*/
-
-    x.on("click", function(sender) {
-      //var v = new Vote($(this).attr("data-id"));
-      //alert("You just voted for me.  I am id=" + v.forId);
-      window.location.replace("http://localhost:2403")
-      //send vote to server
     });
   </script>
 
