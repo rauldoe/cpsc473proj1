@@ -5,7 +5,7 @@
   var $ = globalObj.jQuery;
 
   function RemoteDataStore(url) {
-    
+
     if (!url) {
       throw new Error('No remote URL supplied');
     }
@@ -17,6 +17,22 @@
 
     $.post(this.serverUrl, val, function(serverResponse) {
       console.log(serverResponse);
+    });
+  };
+
+  RemoteDataStore.prototype.update = function(key, val) {
+
+    $.post(this.serverUrl + '/' + key, val, function(serverResponse) {
+      console.log(serverResponse);
+    });
+  };
+
+  RemoteDataStore.prototype.updateWithPut = function(key, val) {
+
+    $.ajax({
+      url: this.serverUrl + '/' + key,
+      type: 'PUT',
+      data: JSON.stringify(val),
     });
   };
 

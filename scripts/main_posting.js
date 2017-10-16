@@ -11,7 +11,7 @@
   var User = App.User;
   var Posting = App.Posting;
   var PostingCard = App.PostingCard;
-
+  var CommentLine = App.CommentLine;
 
   function Main_posting() {
   }
@@ -29,8 +29,97 @@
       $('#desc').val(i.desc);
       $('#picUrl').val(i.picUrl);
       $('#vote').val(i.vote);
+
+      $('#commentlist').html('');
+
+      if (posting.comments) {
+        var cl = new CommentLine($('#commentlist'));
+
+        posting.comments.forEach(function(i){
+          cl.addRow(i);
+        });
+      }
     });
 
+    $('#btnaddcomment').on('click', function(event){
+
+      event.preventDefault();
+
+      var newComment = $('#addcomment').val();
+
+      var remoteDSPostings = new RemoteDataStore(SERVER_URL_POSTINGS);
+
+      remoteDSPostings.get(pid, function(i){
+        posting = i;
+        /*$('#pid').val(i.id);
+        $('#title').val(i.title);
+        $('#desc').val(i.desc);
+        $('#picUrl').val(i.picUrl);
+        $('#vote').val(i.vote);*/
+
+        $('#commentlist').html('');
+
+        if (!posting.comments) {
+          posting.comments = [];
+        }
+
+        posting.comments.push(newComment);
+
+        remoteDSPostings.update(posting.id, {'comments' : posting.comments});
+
+        if (posting.comments) {
+          var cl = new CommentLine($('#commentlist'));
+
+          posting.comments.forEach(function(i){
+            cl.addRow(i);
+          });
+        }
+      });
+
+    });
+
+    $('#btnvote').on('click', function(event){
+
+      event.preventDefault();
+
+      var po = new Posting();
+      po.pid = $('#pid').val();
+      po.vote = parseInt($('#vote').val()) + 1;
+      po.title = $('#title').val();
+      po.desc = $('#desc').val();
+      po.picUrl = $('#picUrl').val();
+
+      $('input[name=vote]').val(po.vote);
+
+      remoteDSPostings.update(po.pid, {"vote" : po.vote});
+
+    });
+
+
+  };
+
+  Main_posting.prototype.updateUI = function() {
+
+    var remoteDSPostings = new RemoteDataStore(SERVER_URL_POSTINGS);
+
+    remoteDSPostings.get(pid, function(i){
+      posting = i;
+      $('#pid').val(i.id);
+      $('#title').val(i.title);
+      $('#desc').val(i.desc);
+      $('#picUrl').val(i.picUrl);
+      $('#vote').val(i.vote);
+
+      $('#commentlist').html('');
+
+      if (posting.comments) {
+        var cl = new CommentLine($('#commentlist'));
+
+        posting.comments.forEach(function(i){
+          cl.addRow(i);
+        });
+      }
+    });
   };
 
   Main_posting.prototype.getUrlVars = function() {

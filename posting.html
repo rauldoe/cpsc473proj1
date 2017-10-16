@@ -60,15 +60,20 @@ rap/3.3.6/css/bootstrap.min.css" /-->
             <input id="picUrl" name="picUrl" type="text" value="" placeholder="a picUrl" class="form-control" />
           </div>
 
-          <button type="submit" class="btn btn-default">Submit</button>
-          <button type="reset" class="btn btn-default">Reset</button>
+          <div class="form-group">
+            <label for="addcomment">Add Comment</label>
+            <input id="addcomment" name="addcomment" type="text" value="" class="form-control" />
+          </div>
+
+          <button id="btnaddcomment" type="submit" class="btn btn-default">Add Comment</button>
+          <button id="btnvote" type="submit" class="btn btn-default">Vote</button>
         </form>
       </div>
     </div>
     <div class="panel panel-default">
       <div class="panel-body">
-        <h4>Postings:</h4>
-        <div data-posting="checklist"></div>
+        <h4>Comments:</h4>
+        <div id="commentlist" data-posting="commentlist"></div>
       </div>
     </div>
   </section>
@@ -83,6 +88,7 @@ rap/3.3.6/css/bootstrap.min.css" /-->
   <script src="scripts/datastore.js" charset="utf-8"></script>
   <script src="scripts/posting.js" charset="utf-8"></script>
   <script src="scripts/user.js" charset="utf-8"></script>
+  <script src="scripts/commentline.js" charset="utf-8"></script>
   <script src="scripts/main_posting.js" charset="utf-8"></script>
 
   <script>
