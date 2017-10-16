@@ -22,7 +22,10 @@
     var user = users.find(function(i){return i.userName === data.userName && i.password === data.password});
 
     if (user) {
+      console.log('login successful');
       window.location.replace("http://localhost:2403/landing.html")
+    } else {
+      console.log('login NOT successful');
     }
   });
 
