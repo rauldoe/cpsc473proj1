@@ -1,83 +1,41 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-
 <head>
-  <meta charset="utf-8" />
-  <title>Posting Item</title>
-  <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootst
-rap/3.3.6/css/bootstrap.min.css" /-->
-  <link rel="stylesheet" href="styles/bootstrap.min.css" />
-  <style>
-    form focus:required:invalid {
-      border-color: #a9442;
-    }
-  </style>
+<style>
+a {
+    text-decoration: none;
+    display: inline-grid;
+    padding: 8px 16px;
+}
+h1 {
+  text-align: center;
+}
+
+a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.register {
+    background-color: #159b15;
+    color: white;
+}
+
+.login {
+    background-color: #159b15;
+    color: white;
+}
+
+</style>
 </head>
+<body>
 
-<body class="container">
-  <header>
-    <h1>Posting Item</h1>
-  </header>
-  <section>
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <form data-posting="form">
+<h1>Welcome to VoteYourTravel!</h1>
+<div style="text-align:center">
+<a href="register.html" class="register"> Register</a>
+<a href="login.html" class="login">Login</a>
+</div>
 
-          <div class="form-group">
-            <label for="pid">Pid</label>
-            <input id="pid" name="pid" type="text" class="form-control" autofocus required />
-          </div>
 
-          <div class="form-group">
-            <label for="title">Title</label>
-            <input id="title" name="title" type="text" value="" placeholder="a title" class="form-control" required />
-          </div>
-
-          <div class="form-group">
-            <label for="desc">Desc</label>
-            <input id="desc" name="desc" type="text" value="" placeholder="a desc" class="form-control" />
-          </div>
-
-          <div class="form-group">
-            <label for="vote">Vote</label>
-            <input id="vote" name="vote" type="range" value="30" placeholder="a vote" class="form-control" />
-          </div>
-
-          <div class="form-group">
-            <label for="picUrl">PicUrl</label>
-            <input id="picUrl" name="picUrl" type="text" value="" placeholder="a picUrl" class="form-control" />
-          </div>
-
-          <div class="form-group">
-            <label for="uid">Uid</label>
-            <input id="uid" name="uid" type="text" value="" placeholder="a uid" class="form-control" />
-          </div>
-
-          <button type="submit" class="btn btn-default">Submit</button>
-          <button type="reset" class="btn btn-default">Reset</button>
-        </form>
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <h4>Postings:</h4>
-        <div data-posting="checklist"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Closing script tags are required -->
-  <!--script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" charset="utf-8" ></script-->
-  <script src="scripts/jquery.min.js" charset="utf-8"></script>
-  <script src="scripts/validation.js" charset="utf-8"></script>
-  <script src="scripts/checklist.js" charset="utf-8"></script>
-  <script src="scripts/formhandler.js" charset="utf-8"></script>
-  <script src="scripts/remotedatastore.js" charset="utf-8"></script>
-  <script src="scripts/datastore.js" charset="utf-8"></script>
-  <script src="scripts/truck.js" charset="utf-8"></script>
-  <script src="scripts/posting.js" charset="utf-8"></script>
-  <script src="scripts/user.js" charset="utf-8"></script>
-  <script src="scripts/main.js" charset="utf-8"></script>
 </body>
-
 </html>
