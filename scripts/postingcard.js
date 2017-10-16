@@ -24,7 +24,7 @@
       'class': 'card-text'
     });
 
-    $p.append(postingItem.desc);
+    $p.append('Vote: ' + postingItem.vote + ' ' + postingItem.desc);
 
     $div.append($img);
     $div.append($p);

@@ -27,6 +27,10 @@
     remoteDSPostings.getAll(function(i) {
       postings = i;
 
+      postings.sort(function(l, r){
+          return parseInt(r.vote) - parseInt(l.vote);
+      });
+
       postings.forEach(function(j){
         postingCardObj.addRow(j, function(k){
           window.location.replace("http://localhost:3000/posting.html?pid=" + k);
