@@ -1,66 +1,84 @@
 <!DOCTYPE html>
 <html>
-<style>
-form {
-    border: 2px solid #0f0e0e;
-}
 
-input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
+<head>
+  <style>
+    form {
+      border: 2px solid #0f0e0e;
+    }
 
-button {
-    background-color: #1a5b1d;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-}
+    input[type=text],
+    input[type=password] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
 
-button:hover {
-    opacity: 0.8;
-}
+    button {
+      background-color: #1a5b1d;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
 
-.imgcontainer {
-    text-align: center;
-    margin: 24px 0 12px 0;
-}
+    button:hover {
+      opacity: 0.8;
+    }
 
-.container {
-    padding: 16px;
-}
+    .imgcontainer {
+      text-align: center;
+      margin: 24px 0 12px 0;
+    }
 
-span.password {
-    float: right;
-    padding-top: 16px;
-}
+    .container {
+      padding: 16px;
+    }
 
-</style>
+    span.password {
+      float: right;
+      padding-top: 16px;
+    }
+  </style>
+
+  <title>Login</title>
+</head>
+
 <body>
 
-<h1>Login Form</h1>
+  <h1>Login Form</h1>
 
-<form action="/posting.html">
-  <div class="container">
-    <label><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="username" required>
+  <form data-posting="form">
+    <div class="container">
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="userName" required>
 
-    <label><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="password" required>
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="password" required>
 
-    <button type="submit">Login</button>
-  </div>
+      <button type="submit">Login</button>
+    </div>
 
-  <div class="container" style="background-color:#ffffff">
-  </div>
-</form>
+    <div class="container" style="background-color:#ffffff">
+    </div>
+  </form>
 
+  <!-- Closing script tags are required -->
+  <!--script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" charset="utf-8" ></script-->
+  <script src="scripts/jquery.min.js" charset="utf-8"></script>
+  <script src="scripts/validation.js" charset="utf-8"></script>
+  <script src="scripts/checklist.js" charset="utf-8"></script>
+  <script src="scripts/formhandler.js" charset="utf-8"></script>
+  <script src="scripts/remotedatastore.js" charset="utf-8"></script>
+  <script src="scripts/datastore.js" charset="utf-8"></script>
+  <script src="scripts/posting.js" charset="utf-8"></script>
+  <script src="scripts/user.js" charset="utf-8"></script>
+  <script src="scripts/main_login.js" charset="utf-8"></script>
 </body>
+
 </html>

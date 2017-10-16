@@ -3,9 +3,9 @@
 
   var App = globalObj.App || {};
 
-  function User(uid, username, firstName, lastName, password, email) {
+  function User(id, username, firstName, lastName, password, email) {
 
-    this.uid = uid;
+    this.id = id;
     this.username = username;
     this.firstName = firstName;
     this.lastName = lastName;
