@@ -2,9 +2,12 @@
 <html>
 
 <head>
-  <title>Register</title>
+  <title>Login</title>
+
   <style>
-    /* Full-width input fields */
+    form {
+      border: 2px solid #0f0e0e;
+    }
 
     input[type=text],
     input[type=password] {
@@ -15,7 +18,6 @@
       border: 1px solid #ccc;
       box-sizing: border-box;
     }
-    /* Set a style for all buttons */
 
     button {
       background-color: #1a5b1d;
@@ -26,35 +28,36 @@
       cursor: pointer;
       width: 100%;
     }
-    /* Float signup buttons and add an equal width */
 
-    .signupbtn {
-      float: left;
-      width: 100%;
+    button:hover {
+      opacity: 0.8;
     }
-    /* Add padding to container elements */
+
+    .imgcontainer {
+      text-align: center;
+      margin: 24px 0 12px 0;
+    }
 
     .container {
       padding: 16px;
     }
-    /* Clear floats */
 
-    .clearfix::after {
-      content: "";
-      clear: both;
-      display: table;
+    span.password {
+      float: right;
+      padding-top: 16px;
     }
   </style>
 </head>
 
 <body>
+
   <div>
     <a href="/">Home Page</a>
   </div>
 
-  <h1>Register</h1>
+  <h1>Login Form</h1>
 
-  <form data-user="form" style="border:2px solid #0f0e0e">
+  <form data-user="form">
     <div class="container">
       <label><b>Username</b></label>
       <input type="text" placeholder="Enter Username" name="userName" required>
@@ -62,12 +65,10 @@
       <label><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="password" required>
 
-      <label><b>Repeat Password</b></label>
-      <input type="password" placeholder="Repeat Password" name="password-repeat" required>
+      <button type="submit">Login</button>
+    </div>
 
-      <div class="clearfix">
-        <button type="submit" class="signupbtn">Sign Up</button>
-      </div>
+    <div class="container" style="background-color:#ffffff">
     </div>
   </form>
 
@@ -81,7 +82,7 @@
   <script src="scripts/datastore.js" charset="utf-8"></script>
   <script src="scripts/posting.js" charset="utf-8"></script>
   <script src="scripts/user.js" charset="utf-8"></script>
-  <script src="scripts/main_register.js" charset="utf-8"></script>
+  <script src="scripts/main_login.js" charset="utf-8"></script>
 </body>
 
 </html>

@@ -37,19 +37,19 @@
     });
   };
 
-  FormHandler.prototype.addInputHandler = function(fn) {
+  FormHandler.prototype.addInputHandler = function(fn, idTag) {
 
     console.log('Setting input handler for form');
 
-    this.$formElement.on('input', '[name="pid"]', function(event){
-      var pid = event.target.value;
+    this.$formElement.on('input', '[name="' + idTag + '"]', function(event){
+      var id = event.target.value;
       //console.log(fn(emailAddress));
 
       var message = '';
-      if (fn(pid)) {
+      if (fn(id)) {
         event.target.setCustomValidity('');
       } else {
-        message = pid + ' is not an authorized email address!';
+        message = id + ' is not an authorized email address!';
         event.target.setCustomValidity(message);
       }
     });

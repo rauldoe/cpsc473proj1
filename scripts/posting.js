@@ -5,6 +5,8 @@
 
   function Posting(pid, title, desc, comments, vote, picUrl, uid) {
 
+    var self = this;
+
     this.pid = pid;
     this.title = title;
     this.desc = desc;
@@ -15,8 +17,8 @@
   }
 
   Posting.prototype.voteUp = function() {
-    
-    this.vote += 1;
+
+    self.vote += 1;
   };
 
   App.Posting = Posting;

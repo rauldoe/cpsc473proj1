@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="images/favicon.ico">
+
+  <title>Your Favorite Travel Destination!</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="styles/travel.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="collapse bg-dark" id="navbarHeader">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 py-4">
+          <h4 class="text-white">About</h4>
+          <p class="text-muted">VoteYourTravel, the premiere site for travel would like to know what has been your favorite travel destination. Vote here for your favorite travel destination and let your voice be heard.</p>
+        </div>
+        <div class="col-sm-4 py-4">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="navbar navbar-dark bg-dark">
+    <div class="container d-flex justify-content-between">
+      <a href="#" class="navbar-brand">Travel Destinations</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+  </div>
+
+  <div>
+    <a href="/">Log Out</a>
+  </div>
+  <div>
+    <a href="/add_posting.html">Add a New Travel Destination</a>
+  </div>
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">Vote For Your Favorite Travel Destination</h1>
+      <p class="lead text-muted">Here are some exciting travel destinations. Please vote for your favorite place to vacation.</p>
+    </div>
+  </section>
+
+  <div class="travel text-muted">
+    <div class="container">
+
+      <div class="row">
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Back to top</a>
+      </p>
+      <p>Let your voice be heard</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="scripts/jquery.min.js" charset="utf-8"></script>
+
+  <script src="assets/js/vendor/popper.min.js"></script>
+  <script src="assets/js/vendor/holder.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+
+  <script src="scripts/validation.js" charset="utf-8"></script>
+  <script src="scripts/formhandler.js" charset="utf-8"></script>
+  <script src="scripts/remotedatastore.js" charset="utf-8"></script>
+  <script src="scripts/datastore.js" charset="utf-8"></script>
+  <script src="scripts/posting.js" charset="utf-8"></script>
+  <script src="scripts/user.js" charset="utf-8"></script>
+  <script src="scripts/postingcard.js" charset="utf-8"></script>
+  <script src="scripts/main_landing.js" charset="utf-8"></script>
+
+  <script>
+    $(function() {
+      Holder.addTheme("thumb", {
+        background: "#55595c",
+        foreground: "#eceeef",
+        text: "Thumbnail"
+      });
+
+      //initialize
+      var i = new window.App.Main_landing();
+      i.init();
+    });
+
+  </script>
+
+</body>
+
+</html>

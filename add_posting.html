@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Add a New Travel Destination</title>
+
+  <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootst
+rap/3.3.6/css/bootstrap.min.css" /-->
+  <link rel="stylesheet" href="styles/bootstrap.min.css" />
+  <style>
+    a {
+      text-decoration: none;
+      display: inline-grid;
+      padding: 8px 16px;
+    }
+
+    .logout-btn {
+      background-color: #a8151d;
+      color: white;
+    }
+
+    form focus:required:invalid {
+      border-color: #a9442;
+    }
+
+    .postpic{
+      height: 100px;
+      width: 100px;
+    }
+  </style>
+</head>
+
+<body class="container">
+  <header>
+    <h1>Add a New Travel Destination</h1>
+  </header>
+  <section>
+    <div>
+      <a href="/landing.html">Back to List</a>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <form data-posting="form">
+
+            <div class="form-group">
+            <label for="title">Title</label>
+            <input id="title" name="title" type="text" value="" placeholder="a title" class="form-control" required />
+          </div>
+
+          <div class="form-group">
+            <label for="desc">Desc</label>
+            <input id="desc" name="desc" type="text" value="" placeholder="a desc" class="form-control" />
+          </div>
+
+          <div class="form-group">
+            <label for="picUrl">PicUrl</label>
+            <input id="picUrl" name="picUrl" type="text" value="" placeholder="a picUrl" class="form-control" />
+          </div>
+
+          <button id="btnadd" type="submit" class="btn btn-default">Add</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing script tags are required -->
+  <!--script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" charset="utf-8" ></script-->
+  <script src="scripts/jquery.min.js" charset="utf-8"></script>
+  <script src="scripts/validation.js" charset="utf-8"></script>
+  <script src="scripts/checklist.js" charset="utf-8"></script>
+  <script src="scripts/formhandler.js" charset="utf-8"></script>
+  <script src="scripts/remotedatastore.js" charset="utf-8"></script>
+  <script src="scripts/datastore.js" charset="utf-8"></script>
+  <script src="scripts/posting.js" charset="utf-8"></script>
+  <script src="scripts/user.js" charset="utf-8"></script>
+  <script src="scripts/commentline.js" charset="utf-8"></script>
+  <script src="scripts/main_add_posting.js" charset="utf-8"></script>
+
+  <script>
+    $(function() {
+      //initialize
+      var i = new window.App.Main_add_posting();
+
+      i.init();
+    });
+
+  </script>
+</body>
+
+</html>
